@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bleu royal du logo GSMA */
+  --color-primary:       #1a2878;
+  --color-primary-dark:  #111b5a;
+  --color-primary-light: #263499;
+  --color-primary-bg:    #f0f2ff;
+
+  /* Or du laurier */
+  --color-gold:          #c8a400;
+  --color-gold-light:    #e8c220;
+  --color-gold-muted:    #d4b84a;
+
+  --color-surface:       #f8f9fc;
+  --color-border:        #dde1f0;
+}
+
+:root {
+  --background: #f8f9fc;
+  --foreground: #1a1f3c;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}

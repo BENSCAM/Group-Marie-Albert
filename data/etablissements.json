@@ -1,0 +1,292 @@
+[
+  {
+    "id": "1",
+    "slug": "ecole-maternelle-et-primaire-marie-albert-biteng",
+    "nom": "École Maternelle et Primaire Marie Albert Biteng",
+    "type": "primaire",
+    "description": "Une école maternelle et primaire d'excellence offrant un enseignement de qualité dans un cadre bienveillant et stimulant. Nous préparons les enfants à réussir leur parcours scolaire.",
+    "adresse": "Biteng, Yaoundé",
+    "telephone": "+243 000 000 001",
+    "email": "primaire@mariealbert.cd",
+    "logo": null,
+    "flyer": null,
+    "pensions": [
+      {
+        "id": "p1-1",
+        "label": "Frais d'inscription",
+        "montant": 25000,
+        "devise": "FC",
+        "description": "Frais uniques à l'inscription",
+        "obligatoire": true
+      },
+      {
+        "id": "p1-2",
+        "label": "Scolarité annuelle",
+        "montant": 180000,
+        "devise": "FC",
+        "description": "Payable en 3 tranches trimestrielles",
+        "obligatoire": true
+      },
+      {
+        "id": "p1-3",
+        "label": "Frais de tenue scolaire",
+        "montant": 35000,
+        "devise": "FC",
+        "description": "Uniforme complet (chemise, pantalon/jupe, chaussures)",
+        "obligatoire": true
+      },
+      {
+        "id": "p1-4",
+        "label": "Cantine scolaire",
+        "montant": 60000,
+        "devise": "FC",
+        "description": "Repas de midi – paiement par trimestre",
+        "obligatoire": false
+      },
+      {
+        "id": "p1-5",
+        "label": "Transport scolaire",
+        "montant": 90000,
+        "devise": "FC",
+        "description": "Navette aller-retour domicile-école",
+        "obligatoire": false
+      }
+    ],
+    "anneeScolaire": "2024-2025",
+    "actif": true,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2026-05-28T07:59:03.024Z"
+  },
+  {
+    "id": "2",
+    "slug": "college-marie-albert",
+    "nom": "Collège Marie Albert",
+    "type": "college",
+    "description": "Le Collège Marie Albert accueille les élèves du cycle secondaire inférieur. Nous offrons un programme rigoureux alliant excellence académique et épanouissement personnel.",
+    "adresse": "Boulevard de l'Indépendance, Quartier Nord",
+    "telephone": "+243 000 000 002",
+    "email": "college@mariealbert.cd",
+    "logo": null,
+    "flyer": null,
+    "pensions": [
+      {
+        "id": "p2-1",
+        "label": "Frais d'inscription",
+        "montant": 35000,
+        "devise": "FC",
+        "description": "Frais uniques à l'inscription",
+        "obligatoire": true
+      },
+      {
+        "id": "p2-2",
+        "label": "Scolarité annuelle",
+        "montant": 280000,
+        "devise": "FC",
+        "description": "Payable en 3 tranches trimestrielles",
+        "obligatoire": true
+      },
+      {
+        "id": "p2-3",
+        "label": "Frais de tenue scolaire",
+        "montant": 45000,
+        "devise": "FC",
+        "description": "Uniforme complet",
+        "obligatoire": true
+      },
+      {
+        "id": "p2-4",
+        "label": "Cantine scolaire",
+        "montant": 75000,
+        "devise": "FC",
+        "description": "Repas de midi – paiement par trimestre",
+        "obligatoire": false
+      },
+      {
+        "id": "p2-5",
+        "label": "Transport scolaire",
+        "montant": 90000,
+        "devise": "FC",
+        "description": "Navette aller-retour domicile-école",
+        "obligatoire": false
+      }
+    ],
+    "anneeScolaire": "2024-2025",
+    "actif": true,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2024-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "slug": "lycee-marie-albert",
+    "nom": "Lycée Marie Albert",
+    "type": "lycee",
+    "description": "Le Lycée Marie Albert prépare les élèves à l'obtention du baccalauréat. Notre corps enseignant qualifié garantit un enseignement de haut niveau orienté vers la réussite.",
+    "adresse": "Rue de l'Université, Quartier Est",
+    "telephone": "+243 000 000 003",
+    "email": "lycee@mariealbert.cd",
+    "logo": null,
+    "flyer": null,
+    "pensions": [
+      {
+        "id": "p3-1",
+        "label": "Frais d'inscription",
+        "montant": 50000,
+        "devise": "FC",
+        "description": "Frais uniques à l'inscription",
+        "obligatoire": true
+      },
+      {
+        "id": "p3-2",
+        "label": "Scolarité annuelle",
+        "montant": 380000,
+        "devise": "FC",
+        "description": "Payable en 3 tranches trimestrielles",
+        "obligatoire": true
+      },
+      {
+        "id": "p3-3",
+        "label": "Frais de tenue scolaire",
+        "montant": 50000,
+        "devise": "FC",
+        "description": "Uniforme complet",
+        "obligatoire": true
+      },
+      {
+        "id": "p3-4",
+        "label": "Frais d'examen",
+        "montant": 40000,
+        "devise": "FC",
+        "description": "Frais liés aux examens officiels",
+        "obligatoire": true
+      },
+      {
+        "id": "p3-5",
+        "label": "Cantine scolaire",
+        "montant": 85000,
+        "devise": "FC",
+        "description": "Repas de midi – paiement par trimestre",
+        "obligatoire": false
+      },
+      {
+        "id": "p3-6",
+        "label": "Transport scolaire",
+        "montant": 90000,
+        "devise": "FC",
+        "description": "Navette aller-retour domicile-école",
+        "obligatoire": false
+      }
+    ],
+    "anneeScolaire": "2024-2025",
+    "actif": true,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2024-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "slug": "institut-marie-albert",
+    "nom": "Institut Supérieur Marie Albert",
+    "type": "universite",
+    "description": "L'Institut Supérieur Marie Albert forme les professionnels de demain dans plusieurs filières d'excellence. Un établissement d'enseignement supérieur reconnu pour la qualité de sa formation.",
+    "adresse": "Campus Marie Albert, Avenue de l'Avenir",
+    "telephone": "+243 000 000 004",
+    "email": "ism@mariealbert.cd",
+    "logo": null,
+    "flyer": null,
+    "pensions": [
+      {
+        "id": "p4-1",
+        "label": "Frais d'inscription",
+        "montant": 100000,
+        "devise": "FC",
+        "description": "Frais uniques à l'inscription par année académique",
+        "obligatoire": true
+      },
+      {
+        "id": "p4-2",
+        "label": "Minerval annuel – Licence",
+        "montant": 650000,
+        "devise": "FC",
+        "description": "Frais académiques annuels pour le cycle de Licence (L1-L3)",
+        "obligatoire": true
+      },
+      {
+        "id": "p4-3",
+        "label": "Minerval annuel – Master",
+        "montant": 850000,
+        "devise": "FC",
+        "description": "Frais académiques annuels pour le cycle de Master (M1-M2)",
+        "obligatoire": true
+      },
+      {
+        "id": "p4-4",
+        "label": "Frais de bibliothèque",
+        "montant": 30000,
+        "devise": "FC",
+        "description": "Accès à la bibliothèque et aux ressources numériques",
+        "obligatoire": true
+      },
+      {
+        "id": "p4-5",
+        "label": "Assurance étudiante",
+        "montant": 25000,
+        "devise": "FC",
+        "description": "Couverture médicale de base pour les étudiants",
+        "obligatoire": true
+      }
+    ],
+    "anneeScolaire": "2024-2025",
+    "actif": true,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2024-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "slug": "maternelle-marie-albert",
+    "nom": "Maternelle Marie Albert",
+    "type": "primaire",
+    "description": "Notre section maternelle accueille les tout-petits dans un environnement chaleureux et sécurisé. Éveil, jeu et apprentissage sont au cœur de notre pédagogie.",
+    "adresse": "Rue des Fleurs, Quartier Résidentiel",
+    "telephone": "+243 000 000 005",
+    "email": "maternelle@mariealbert.cd",
+    "logo": null,
+    "flyer": null,
+    "pensions": [
+      {
+        "id": "p5-1",
+        "label": "Frais d'inscription",
+        "montant": 20000,
+        "devise": "FC",
+        "description": "Frais uniques à l'inscription",
+        "obligatoire": true
+      },
+      {
+        "id": "p5-2",
+        "label": "Scolarité annuelle",
+        "montant": 150000,
+        "devise": "FC",
+        "description": "Payable en 3 tranches trimestrielles",
+        "obligatoire": true
+      },
+      {
+        "id": "p5-3",
+        "label": "Matériel pédagogique",
+        "montant": 40000,
+        "devise": "FC",
+        "description": "Fournitures et matériel éducatif",
+        "obligatoire": true
+      },
+      {
+        "id": "p5-4",
+        "label": "Repas et goûter",
+        "montant": 80000,
+        "devise": "FC",
+        "description": "Repas du midi et goûter de l'après-midi",
+        "obligatoire": false
+      }
+    ],
+    "anneeScolaire": "2024-2025",
+    "actif": true,
+    "createdAt": "2024-09-01T00:00:00.000Z",
+    "updatedAt": "2024-09-01T00:00:00.000Z"
+  }
+]
