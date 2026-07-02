@@ -17,7 +17,7 @@ export default function AdminDashboard() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <p className="text-3xl font-bold text-[#1e3a5f]">{etablissements.length}</p>
+          <p className="text-3xl font-bold text-[#6B21A8]">{etablissements.length}</p>
           <p className="text-sm text-slate-500 mt-1">Établissements</p>
         </div>
         <div className="bg-white rounded-xl border border-slate-200 p-5">
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
           <p className="text-sm text-slate-500 mt-1">Inactifs</p>
         </div>
         <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <p className="text-3xl font-bold text-[#c8a94a]">
+          <p className="text-3xl font-bold text-[#C8A400]">
             {etablissements.reduce((s, e) => s + e.pensions.length, 0)}
           </p>
           <p className="text-sm text-slate-500 mt-1">Lignes de frais</p>
@@ -40,7 +40,7 @@ export default function AdminDashboard() {
       <div className="flex gap-3 mb-8">
         <Link
           href="/admin/etablissements/nouveau"
-          className="bg-[#1e3a5f] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#152d4a] transition-colors"
+          className="bg-[#6B21A8] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#4C1678] transition-colors"
         >
           + Nouvel établissement
         </Link>
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
       <div className="bg-white rounded-xl border border-slate-200">
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
           <h2 className="font-semibold text-slate-800">Établissements</h2>
-          <Link href="/admin/etablissements" className="text-xs text-[#1e3a5f] hover:underline">
+          <Link href="/admin/etablissements" className="text-xs text-[#6B21A8] hover:underline">
             Voir tout
           </Link>
         </div>
@@ -75,7 +75,7 @@ export default function AdminDashboard() {
                 </span>
                 <Link
                   href={`/admin/etablissements/${etab.id}`}
-                  className="text-xs text-[#1e3a5f] hover:underline"
+                  className="text-xs text-[#6B21A8] hover:underline"
                 >
                   Modifier
                 </Link>

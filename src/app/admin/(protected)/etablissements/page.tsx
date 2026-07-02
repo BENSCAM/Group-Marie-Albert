@@ -14,7 +14,7 @@ export default function AdminEtablissements() {
         </div>
         <Link
           href="/admin/etablissements/nouveau"
-          className="bg-[#1e3a5f] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#152d4a] transition-colors"
+          className="bg-[#6B21A8] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#4C1678] transition-colors"
         >
           + Nouveau
         </Link>
@@ -62,7 +62,7 @@ export default function AdminEtablissements() {
                       </Link>
                       <Link
                         href={`/admin/etablissements/${etab.id}`}
-                        className="text-[#1e3a5f] hover:underline text-xs font-medium"
+                        className="text-[#6B21A8] hover:underline text-xs font-medium"
                       >
                         Modifier
                       </Link>

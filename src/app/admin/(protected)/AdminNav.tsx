@@ -20,20 +20,14 @@ export default function AdminNav() {
   ];
 
   return (
-    <header className="bg-[#1a2878] text-white shadow-md border-b-2 border-[#c8a400]/40">
+    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-5">
           <Link href="/admin" className="flex items-center gap-2.5">
-            <Image
-              src="/logo.png"
-              alt="Logo GSMA"
-              width={36}
-              height={36}
-              className="rounded-full bg-white p-0.5"
-            />
+            <Image src="/logo.png" alt="Logo GSMA" width={38} height={38} className="rounded-full" />
             <div>
-              <p className="text-xs text-[#c8a400] font-semibold leading-none">G.S.M.A</p>
-              <p className="text-sm font-bold leading-tight">Administration</p>
+              <p className="text-[#6B21A8] text-[10px] font-bold uppercase tracking-wide leading-none">Admin</p>
+              <p className="text-[#1a2878] text-sm font-bold leading-tight">Marie Albert Group</p>
             </div>
           </Link>
           <nav className="flex gap-1">
@@ -41,10 +35,10 @@ export default function AdminNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm px-3 py-1.5 rounded-lg transition-colors ${
+                className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-colors ${
                   pathname === link.href
-                    ? 'bg-[#c8a400]/20 text-[#e8c220] font-medium'
-                    : 'text-blue-200 hover:text-white hover:bg-white/10'
+                    ? 'bg-[#1a2878] text-white'
+                    : 'text-gray-500 hover:bg-gray-100 hover:text-[#1a2878]'
                 }`}
               >
                 {link.label}
@@ -53,12 +47,12 @@ export default function AdminNav() {
           </nav>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/" className="text-xs text-blue-200 hover:text-white transition-colors">
-            Voir le site →
+          <Link href="/" className="text-xs text-gray-400 hover:text-[#6B21A8] transition-colors">
+            ← Site
           </Link>
           <button
             onClick={handleLogout}
-            className="text-xs bg-white/10 hover:bg-red-500/30 border border-white/20 px-3 py-1.5 rounded-lg transition-colors"
+            className="text-xs bg-gray-100 hover:bg-red-50 hover:text-red-600 border border-gray-200 px-3 py-1.5 rounded-lg transition-colors font-medium"
           >
             Déconnexion
           </button>

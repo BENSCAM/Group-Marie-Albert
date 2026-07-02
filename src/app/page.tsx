@@ -9,14 +9,20 @@ export default function HomePage() {
   const etablissements = getEtablissements().filter((e) => e.actif);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a2878] via-[#1e2f8a] to-[#111b5a] text-white py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* Hero — photo de l'établissement en background */}
+      <section
+        className="relative py-20 px-4 border-b border-gray-100 overflow-hidden"
+        style={{ backgroundImage: "url('/hero-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        {/* Overlay bleu foncé — photo visible, textes lisibles */}
+        <div className="absolute inset-0 bg-[#1a2878]/65" />
+
+        <div className="relative max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <div className="bg-white rounded-full p-2 shadow-2xl shadow-[#c8a400]/30 ring-4 ring-[#c8a400]/40">
+            <div className="bg-white rounded-full p-1.5 shadow-xl">
               <Image
                 src="/logo.png"
                 alt="Logo Groupe Scolaire Marie Albert"
@@ -27,57 +33,55 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-2 text-balance">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 text-balance drop-shadow">
             {config.nom}
           </h1>
-          <p className="text-[#c8a400] text-base md:text-lg font-medium tracking-widest uppercase mb-3">
-            G.S.M.A &nbsp;·&nbsp; M.A.G
+          <p className="text-[#C8A400] text-sm font-semibold tracking-widest uppercase mb-4">
+            Innovation · Discipline · Excellence
           </p>
-          <p className="text-blue-200 italic mb-6">
-            &ldquo;{config.slogan}&rdquo;
-          </p>
-          <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-blue-100 max-w-xl mx-auto text-sm leading-relaxed mb-8">
             {config.description}
           </p>
-          <div className="mt-8 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 text-sm">
-            <span>📱</span>
-            <span>Scannez le QR code de votre établissement pour accéder aux informations de pension</span>
-          </div>
+          <a
+            href="#etablissements"
+            className="inline-flex items-center gap-2 bg-[#6B21A8] hover:bg-[#4C1678] text-white font-semibold px-7 py-3 rounded-full transition-colors text-sm shadow-lg"
+          >
+            Voir les établissements
+          </a>
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="bg-[#111b5a] text-white py-4 px-4 border-b-2 border-[#c8a400]/40">
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-10">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-[#c8a400]">{etablissements.length}</p>
-            <p className="text-xs text-blue-200 uppercase tracking-wide">Établissements</p>
+      {/* Stats — fond très léger */}
+      <section className="bg-gray-50 border-b border-gray-100 py-10 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
+          <div>
+            <p className="text-4xl font-bold text-[#1a2878]">
+              {etablissements.length}
+              <span className="text-[#6B21A8] text-2xl">+</span>
+            </p>
+            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Établissements</p>
           </div>
-          <div className="text-center">
-            <p className="text-2xl font-bold text-[#c8a400]">4</p>
-            <p className="text-xs text-blue-200 uppercase tracking-wide">Niveaux d&apos;enseignement</p>
+          <div>
+            <p className="text-4xl font-bold text-[#1a2878]">20</p>
+            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Programmes</p>
           </div>
-          <div className="text-center">
-            <p className="text-2xl font-bold text-[#c8a400]">2024-2025</p>
-            <p className="text-xs text-blue-200 uppercase tracking-wide">Année scolaire</p>
+          <div>
+            <p className="text-4xl font-bold text-[#1a2878]">
+              80<span className="text-[#6B21A8] text-2xl">+</span>
+            </p>
+            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Enseignants</p>
           </div>
         </div>
       </section>
 
       {/* Establishments Grid */}
-      <section id="etablissements" className="py-16 px-4 bg-[#f8f9fc]">
+      <section id="etablissements" className="py-14 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 text-[#c8a400] text-xs uppercase tracking-widest font-semibold mb-2">
-              <span className="w-8 h-px bg-[#c8a400]" />
-              Nos établissements
-              <span className="w-8 h-px bg-[#c8a400]" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a2878]">
-              Informations de pension
-            </h2>
-            <p className="text-slate-500 text-sm mt-2">
-              Cliquez sur un établissement pour voir les détails et les tarifs complets
+            <h2 className="text-2xl font-bold text-[#1a2878] mb-2">Nos Établissements</h2>
+            <div className="w-12 h-0.5 bg-[#6B21A8] mx-auto" />
+            <p className="text-gray-400 text-sm mt-3">
+              Cliquez sur un établissement pour voir les frais et le QR code
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,34 +92,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-white border-y border-[#dde1f0] py-14 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 text-[#c8a400] text-xs uppercase tracking-widest font-semibold mb-2">
-              <span className="w-8 h-px bg-[#c8a400]" />
-              Comment ça fonctionne
-              <span className="w-8 h-px bg-[#c8a400]" />
-            </div>
-            <h2 className="text-xl md:text-2xl font-bold text-[#1a2878]">
-              Fini les flyers imprimés
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { icon: '📱', title: 'Scannez', desc: "Scannez le QR code affiché à l'entrée de chaque établissement" },
-              { icon: '💰', title: 'Consultez', desc: 'Accédez à tous les tarifs de pension et frais de scolarité à jour' },
-              { icon: '📋', title: 'Comparez', desc: 'Comparez les établissements et choisissez celui qui convient' },
-            ].map((step) => (
-              <div key={step.title} className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 bg-[#1a2878]/10 border-2 border-[#1a2878]/20 rounded-full flex items-center justify-center text-2xl">
-                  {step.icon}
-                </div>
-                <h3 className="font-bold text-[#1a2878]">{step.title}</h3>
-                <p className="text-sm text-slate-500 max-w-xs">{step.desc}</p>
+      {/* QR info — fond gris très léger */}
+      <section className="bg-gray-50 border-t border-gray-100 py-12 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {[
+            { icon: '📱', title: 'Scannez', desc: "Scannez le QR code à l'entrée de l'établissement" },
+            { icon: '💰', title: 'Consultez', desc: 'Accédez aux tarifs de pension à jour' },
+            { icon: '📋', title: 'Comparez', desc: "Choisissez l'établissement adapté" },
+          ].map((step, i) => (
+            <div key={step.title} className="flex flex-col items-center gap-3">
+              <div className="w-14 h-14 bg-white border border-gray-200 rounded-full flex items-center justify-center text-2xl shadow-sm relative">
+                {step.icon}
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#6B21A8] text-white rounded-full text-[10px] flex items-center justify-center font-bold">
+                  {i + 1}
+                </span>
               </div>
-            ))}
-          </div>
+              <h3 className="font-semibold text-[#1a2878] text-sm">{step.title}</h3>
+              <p className="text-xs text-gray-400 max-w-[180px]">{step.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 

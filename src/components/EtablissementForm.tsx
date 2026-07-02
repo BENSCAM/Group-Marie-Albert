@@ -145,7 +145,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               type="text"
               value={nom}
               onChange={(e) => handleNomChange(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
               required
             />
           </div>
@@ -155,7 +155,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               type="text"
               value={slug}
               onChange={(e) => setSlug(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] font-mono"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8] font-mono"
               required
             />
           </div>
@@ -164,7 +164,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
             <select
               value={type}
               onChange={(e) => setType(e.target.value as TypeEtablissement)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
             >
               {(Object.keys(TYPE_LABELS) as TypeEtablissement[]).map((t) => (
                 <option key={t} value={t}>{TYPE_LABELS[t]}</option>
@@ -177,7 +177,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] resize-none"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8] resize-none"
               required
             />
           </div>
@@ -187,7 +187,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               type="text"
               value={adresse}
               onChange={(e) => setAdresse(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
               required
             />
           </div>
@@ -197,7 +197,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               type="text"
               value={telephone}
               onChange={(e) => setTelephone(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
             />
           </div>
           <div>
@@ -206,7 +206,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
             />
           </div>
           <div>
@@ -216,7 +216,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               value={anneeScolaire}
               onChange={(e) => setAnneeScolaire(e.target.value)}
               placeholder="2024-2025"
-              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]"
+              className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6B21A8]"
               required
             />
           </div>
@@ -226,7 +226,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
               id="actif"
               checked={actif}
               onChange={(e) => setActif(e.target.checked)}
-              className="w-4 h-4 rounded border-slate-300 text-[#1e3a5f]"
+              className="w-4 h-4 rounded border-slate-300 text-[#6B21A8]"
             />
             <label htmlFor="actif" className="text-sm font-medium text-slate-700">
               Établissement actif (visible sur le site)
@@ -276,7 +276,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
           <button
             type="button"
             onClick={addPension}
-            className="text-xs bg-[#1e3a5f]/10 text-[#1e3a5f] px-3 py-1.5 rounded-lg hover:bg-[#1e3a5f]/20 transition-colors"
+            className="text-xs bg-[#6B21A8]/10 text-[#6B21A8] px-3 py-1.5 rounded-lg hover:bg-[#6B21A8]/20 transition-colors"
           >
             + Ajouter une ligne
           </button>
@@ -290,7 +290,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
                   placeholder="Libellé *"
                   value={p.label}
                   onChange={(e) => updatePension(p.id, 'label', e.target.value)}
-                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#1e3a5f]"
+                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#6B21A8]"
                   required
                 />
               </div>
@@ -300,7 +300,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
                   placeholder="Montant *"
                   value={p.montant || ''}
                   onChange={(e) => updatePension(p.id, 'montant', parseFloat(e.target.value) || 0)}
-                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#1e3a5f]"
+                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#6B21A8]"
                   required
                   min={0}
                 />
@@ -311,7 +311,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
                   placeholder="FC"
                   value={p.devise}
                   onChange={(e) => updatePension(p.id, 'devise', e.target.value)}
-                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#1e3a5f]"
+                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#6B21A8]"
                 />
               </div>
               <div className="col-span-12 md:col-span-3">
@@ -320,7 +320,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
                   placeholder="Description (optionnel)"
                   value={p.description ?? ''}
                   onChange={(e) => updatePension(p.id, 'description', e.target.value)}
-                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#1e3a5f]"
+                  className="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#6B21A8]"
                 />
               </div>
               <div className="col-span-9 md:col-span-1 flex items-center gap-3 justify-between">
@@ -355,7 +355,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
           <button
             type="submit"
             disabled={saving}
-            className="bg-[#1e3a5f] text-white px-6 py-2.5 rounded-lg font-medium text-sm hover:bg-[#152d4a] transition-colors disabled:opacity-60"
+            className="bg-[#6B21A8] text-white px-6 py-2.5 rounded-lg font-medium text-sm hover:bg-[#4C1678] transition-colors disabled:opacity-60"
           >
             {saving ? 'Enregistrement...' : mode === 'create' ? 'Créer' : 'Enregistrer'}
           </button>
