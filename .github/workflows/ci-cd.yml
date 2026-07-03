@@ -1,0 +1,75 @@
+name: CI/CD — Groupe Marie Albert
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── Intégration continue ────────────────────────────────────────────────────
+  ci:
+    name: Lint & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Vérification TypeScript
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build Next.js
+        run: npm run build
+
+  # ── Déploiement continu ─────────────────────────────────────────────────────
+  deploy:
+    name: Déployer sur VPS
+    needs: ci
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Déployer via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || '22' }}
+          script: |
+            set -e
+            cd ${{ secrets.DEPLOY_PATH }}
+
+            # Sauvegarder les données JSON modifiées par l'admin
+            mkdir -p /tmp/ma_data_bak
+            cp data/*.json /tmp/ma_data_bak/ 2>/dev/null || true
+
+            # Récupérer la dernière version du code
+            git fetch origin main
+            git reset --hard origin/main
+
+            # Restaurer les données JSON
+            cp /tmp/ma_data_bak/*.json data/ 2>/dev/null || true
+            rm -rf /tmp/ma_data_bak
+
+            # Installer & construire
+            npm ci
+            npm run build
+
+            # Reload gracieux (zéro downtime) ou démarrage initial
+            pm2 reload group-marie-albert --update-env \
+              || pm2 start ecosystem.config.js
+            pm2 save

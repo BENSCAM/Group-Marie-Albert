@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -77,7 +78,7 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          <a href="/" className="hover:text-[#1a2878] transition-colors">← Retour au site</a>
+          <Link href="/" className="hover:text-[#1a2878] transition-colors">← Retour au site</Link>
         </p>
       </div>
     </div>

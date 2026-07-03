@@ -26,7 +26,11 @@ export default function EtablissementCard({ etab }: { etab: Etablissement }) {
     <Link href={`/etablissements/${etab.slug}`} className="group block">
       <div className="bg-white rounded-xl border border-gray-200 hover:border-[#6B21A8]/40 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden h-full">
 
-        {etab.flyer ? (
+        {etab.photo ? (
+          <div className="h-40 overflow-hidden">
+            <img src={etab.photo} alt={etab.nom} className="w-full h-full object-cover" />
+          </div>
+        ) : etab.flyer ? (
           <div className="h-40 overflow-hidden">
             <img src={etab.flyer} alt={etab.nom} className="w-full h-full object-cover" />
           </div>

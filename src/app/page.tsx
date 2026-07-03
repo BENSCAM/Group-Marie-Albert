@@ -14,37 +14,37 @@ export default function HomePage() {
 
       {/* Hero — photo de l'établissement en background */}
       <section
-        className="relative py-20 px-4 border-b border-gray-100 overflow-hidden"
+        className="relative py-12 md:py-20 px-4 border-b border-gray-100 overflow-hidden"
         style={{ backgroundImage: "url('/hero-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         {/* Overlay bleu foncé — photo visible, textes lisibles */}
         <div className="absolute inset-0 bg-[#1a2878]/65" />
 
         <div className="relative max-w-4xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4 md:mb-6">
             <div className="bg-white rounded-full p-1.5 shadow-xl">
               <Image
                 src="/logo.png"
                 alt="Logo Groupe Scolaire Marie Albert"
                 width={120}
                 height={120}
-                className="rounded-full"
+                className="rounded-full w-20 h-20 md:w-[110px] md:h-[110px]"
                 priority
               />
             </div>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 text-balance drop-shadow">
+          <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 text-balance drop-shadow">
             {config.nom}
           </h1>
-          <p className="text-[#C8A400] text-sm font-semibold tracking-widest uppercase mb-4">
+          <p className="text-[#C8A400] text-xs md:text-sm font-semibold tracking-widest uppercase mb-3 md:mb-4">
             Innovation · Discipline · Excellence
           </p>
-          <p className="text-blue-100 max-w-xl mx-auto text-sm leading-relaxed mb-8">
+          <p className="text-blue-100 max-w-xl mx-auto text-xs md:text-sm leading-relaxed mb-6 md:mb-8 px-2">
             {config.description}
           </p>
           <a
             href="#etablissements"
-            className="inline-flex items-center gap-2 bg-[#6B21A8] hover:bg-[#4C1678] text-white font-semibold px-7 py-3 rounded-full transition-colors text-sm shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#6B21A8] hover:bg-[#4C1678] text-white font-semibold px-5 md:px-7 py-2.5 md:py-3 rounded-full transition-colors text-sm shadow-lg"
           >
             Voir les établissements
           </a>
@@ -52,24 +52,24 @@ export default function HomePage() {
       </section>
 
       {/* Stats — fond très léger */}
-      <section className="bg-gray-50 border-b border-gray-100 py-10 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
+      <section className="bg-gray-50 border-b border-gray-100 py-7 md:py-10 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-3 md:gap-6 text-center">
           <div>
-            <p className="text-4xl font-bold text-[#1a2878]">
+            <p className="text-3xl md:text-4xl font-bold text-[#1a2878]">
               {etablissements.length}
-              <span className="text-[#6B21A8] text-2xl">+</span>
+              <span className="text-[#6B21A8] text-xl md:text-2xl">+</span>
             </p>
-            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Établissements</p>
+            <p className="text-gray-400 text-[10px] md:text-xs mt-1 uppercase tracking-wide">Établissements</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-[#1a2878]">20</p>
-            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Programmes</p>
+            <p className="text-3xl md:text-4xl font-bold text-[#1a2878]">20</p>
+            <p className="text-gray-400 text-[10px] md:text-xs mt-1 uppercase tracking-wide">Programmes</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-[#1a2878]">
-              80<span className="text-[#6B21A8] text-2xl">+</span>
+            <p className="text-3xl md:text-4xl font-bold text-[#1a2878]">
+              80<span className="text-[#6B21A8] text-xl md:text-2xl">+</span>
             </p>
-            <p className="text-gray-400 text-xs mt-1 uppercase tracking-wide">Enseignants</p>
+            <p className="text-gray-400 text-[10px] md:text-xs mt-1 uppercase tracking-wide">Enseignants</p>
           </div>
         </div>
       </section>

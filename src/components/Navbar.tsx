@@ -10,17 +10,17 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+        <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity min-w-0">
           <Image
             src="/logo.png"
             alt="Logo Groupe Scolaire Marie Albert"
             width={60}
             height={60}
-            className="rounded-full"
+            className="rounded-full w-10 h-10 md:w-[52px] md:h-[52px] shrink-0"
           />
-          <div>
-            <p className="font-bold text-[#1a2878] text-base leading-tight">Groupe Scolaire Marie Albert</p>
-            <p className="text-[#6B21A8] text-[11px] font-semibold tracking-wide">G.S.M.A · M.A.G</p>
+          <div className="min-w-0">
+            <p className="font-bold text-[#1a2878] text-sm md:text-base leading-tight truncate">Groupe Scolaire Marie Albert</p>
+            <p className="text-[#6B21A8] text-[10px] md:text-[11px] font-semibold tracking-wide">G.S.M.A · M.A.G</p>
           </div>
         </Link>
 

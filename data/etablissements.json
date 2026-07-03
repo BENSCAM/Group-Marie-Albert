@@ -9,6 +9,7 @@
     "telephone": "+243 000 000 001",
     "email": "primaire@mariealbert.cd",
     "logo": null,
+    "photo": "/uploads/1783030949769-g6qr8e8ybc.jpg",
     "flyer": null,
     "pensions": [
       {
@@ -55,18 +56,19 @@
     "anneeScolaire": "2024-2025",
     "actif": true,
     "createdAt": "2024-09-01T00:00:00.000Z",
-    "updatedAt": "2026-05-28T07:59:03.024Z"
+    "updatedAt": "2026-07-02T22:22:33.792Z"
   },
   {
     "id": "2",
     "slug": "college-marie-albert",
-    "nom": "Collège Marie Albert",
+    "nom": "Collège Marie Albert Prestige",
     "type": "college",
     "description": "Le Collège Marie Albert accueille les élèves du cycle secondaire inférieur. Nous offrons un programme rigoureux alliant excellence académique et épanouissement personnel.",
     "adresse": "Boulevard de l'Indépendance, Quartier Nord",
     "telephone": "+243 000 000 002",
     "email": "college@mariealbert.cd",
     "logo": null,
+    "photo": "/uploads/1783030770772-94ri0kysbgv.jpg",
     "flyer": null,
     "pensions": [
       {
@@ -113,18 +115,19 @@
     "anneeScolaire": "2024-2025",
     "actif": true,
     "createdAt": "2024-09-01T00:00:00.000Z",
-    "updatedAt": "2024-09-01T00:00:00.000Z"
+    "updatedAt": "2026-07-02T22:19:34.200Z"
   },
   {
     "id": "3",
     "slug": "lycee-marie-albert",
-    "nom": "Lycée Marie Albert",
-    "type": "lycee",
+    "nom": "College Marie Albert II",
+    "type": "college",
     "description": "Le Lycée Marie Albert prépare les élèves à l'obtention du baccalauréat. Notre corps enseignant qualifié garantit un enseignement de haut niveau orienté vers la réussite.",
     "adresse": "Rue de l'Université, Quartier Est",
     "telephone": "+243 000 000 003",
     "email": "lycee@mariealbert.cd",
     "logo": null,
+    "photo": "/uploads/1783030699041-5t9rhqq7nrf.webp",
     "flyer": null,
     "pensions": [
       {
@@ -179,7 +182,7 @@
     "anneeScolaire": "2024-2025",
     "actif": true,
     "createdAt": "2024-09-01T00:00:00.000Z",
-    "updatedAt": "2024-09-01T00:00:00.000Z"
+    "updatedAt": "2026-07-02T22:19:02.192Z"
   },
   {
     "id": "4",
@@ -191,6 +194,7 @@
     "telephone": "+243 000 000 004",
     "email": "ism@mariealbert.cd",
     "logo": null,
+    "photo": "/uploads/1783031388500-q7yuxkw7qh.jpg",
     "flyer": null,
     "pensions": [
       {
@@ -237,19 +241,20 @@
     "anneeScolaire": "2024-2025",
     "actif": true,
     "createdAt": "2024-09-01T00:00:00.000Z",
-    "updatedAt": "2024-09-01T00:00:00.000Z"
+    "updatedAt": "2026-07-02T22:29:51.375Z"
   },
   {
     "id": "5",
-    "slug": "maternelle-marie-albert",
-    "nom": "Maternelle Marie Albert",
+    "slug": "primaire-marie-albert",
+    "nom": "Primaire Marie Albert Prestige",
     "type": "primaire",
     "description": "Notre section maternelle accueille les tout-petits dans un environnement chaleureux et sécurisé. Éveil, jeu et apprentissage sont au cœur de notre pédagogie.",
     "adresse": "Rue des Fleurs, Quartier Résidentiel",
-    "telephone": "+243 000 000 005",
+    "telephone": "+237 691 722 215",
     "email": "maternelle@mariealbert.cd",
     "logo": null,
-    "flyer": null,
+    "photo": "/uploads/1783029787161-z1mc6oaopkn.jpg",
+    "flyer": "/uploads/1783029980343-z6xppctxy1d.jpg",
     "pensions": [
       {
         "id": "p5-1",
@@ -287,6 +292,6 @@
     "anneeScolaire": "2024-2025",
     "actif": true,
     "createdAt": "2024-09-01T00:00:00.000Z",
-    "updatedAt": "2024-09-01T00:00:00.000Z"
+    "updatedAt": "2026-07-02T22:11:50.183Z"
   }
 ]

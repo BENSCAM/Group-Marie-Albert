@@ -39,6 +39,8 @@ export default function EtablissementForm({ initial, mode }: Props) {
   const [email, setEmail] = useState(initial?.email ?? '');
   const [anneeScolaire, setAnneeScolaire] = useState(initial?.anneeScolaire ?? '2024-2025');
   const [actif, setActif] = useState(initial?.actif ?? true);
+  const [photo, setPhoto] = useState(initial?.photo ?? '');
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [flyer, setFlyer] = useState(initial?.flyer ?? '');
   const [pensions, setPensions] = useState<Pension[]>(initial?.pensions ?? [newPension()]);
 
@@ -57,6 +59,28 @@ export default function EtablissementForm({ initial, mode }: Props) {
 
   function updatePension(id: string, field: keyof Pension, value: string | number | boolean) {
     setPensions(pensions.map((p) => (p.id === id ? { ...p, [field]: value } : p)));
+  }
+
+  async function handlePhotoUpload(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadingPhoto(true);
+    setError('');
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (res.ok) {
+        setPhoto(data.url);
+      } else {
+        setError(data.error || 'Erreur upload');
+      }
+    } catch {
+      setError('Erreur réseau lors de l\'upload');
+    } finally {
+      setUploadingPhoto(false);
+    }
   }
 
   async function handleFlyerUpload(e: ChangeEvent<HTMLInputElement>) {
@@ -85,7 +109,7 @@ export default function EtablissementForm({ initial, mode }: Props) {
     e.preventDefault();
     setError('');
     setSaving(true);
-    const payload = { nom, slug, type, description, adresse, telephone, email, anneeScolaire, actif, flyer: flyer || null, pensions };
+    const payload = { nom, slug, type, description, adresse, telephone, email, anneeScolaire, actif, photo: photo || null, flyer: flyer || null, pensions };
     try {
       const url = mode === 'create' ? '/api/etablissements' : `/api/etablissements/${initial?.id}`;
       const method = mode === 'create' ? 'POST' : 'PUT';
@@ -232,6 +256,41 @@ export default function EtablissementForm({ initial, mode }: Props) {
               Établissement actif (visible sur le site)
             </label>
           </div>
+        </div>
+      </div>
+
+      {/* Photo de l'établissement */}
+      <div className="bg-white rounded-xl border border-slate-200 p-6">
+        <h2 className="font-semibold text-slate-800 mb-1">Photo de l&apos;établissement</h2>
+        <p className="text-xs text-slate-400 mb-4">Affichée sur la carte de la page d&apos;accueil</p>
+        <div className="space-y-3">
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Uploader une photo (JPG, PNG – max 5 Mo)
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handlePhotoUpload}
+              className="block w-full text-sm text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border file:border-slate-300 file:text-sm file:bg-white file:text-slate-700 hover:file:bg-slate-50"
+            />
+            {uploadingPhoto && <p className="text-xs text-slate-400 mt-1">Upload en cours...</p>}
+          </div>
+          {photo && (
+            <div className="flex items-start gap-3 mt-2">
+              <img src={photo} alt="Photo établissement" className="w-32 h-20 object-cover rounded-lg border border-slate-200" />
+              <div>
+                <p className="text-xs text-slate-500 font-mono break-all">{photo}</p>
+                <button
+                  type="button"
+                  onClick={() => setPhoto('')}
+                  className="text-xs text-red-500 hover:underline mt-1"
+                >
+                  Supprimer
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -27,6 +27,7 @@ export interface Etablissement {
   telephone?: string;
   email?: string;
   logo?: string;
+  photo?: string | null;
   flyer?: string;
   pensions: Pension[];
   anneeScolaire: string;

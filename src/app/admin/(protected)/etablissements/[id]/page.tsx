@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getEtablissementById } from '@/lib/data';
 import EtablissementForm from '@/components/EtablissementForm';
@@ -14,9 +15,9 @@ export default async function EditEtablissement({ params }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <a href="/admin/etablissements" className="text-sm text-slate-500 hover:text-slate-700">
+        <Link href="/admin/etablissements" className="text-sm text-slate-500 hover:text-slate-700">
           ← Retour
-        </a>
+        </Link>
         <h1 className="text-2xl font-bold text-slate-800 mt-2">Modifier – {etab.nom}</h1>
       </div>
       <EtablissementForm mode="edit" initial={etab} />
