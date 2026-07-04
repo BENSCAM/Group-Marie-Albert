@@ -18,17 +18,20 @@ jobs:
           git config --system --add safe.directory ${{ secrets.DEPLOY_PATH }}
           cd ${{ secrets.DEPLOY_PATH }}
 
-          # Sauvegarder les données JSON de l'admin
-          mkdir -p /tmp/ma_data_bak
+          # Sauvegarder les données JSON et les images uploadées
+          mkdir -p /tmp/ma_data_bak /tmp/ma_uploads_bak
           cp data/*.json /tmp/ma_data_bak/ 2>/dev/null || true
+          cp -r public/uploads/. /tmp/ma_uploads_bak/ 2>/dev/null || true
 
           # Récupérer la dernière version
           git fetch origin main
           git reset --hard origin/main
 
-          # Restaurer les données JSON
+          # Restaurer les données JSON et les images uploadées
           cp /tmp/ma_data_bak/*.json data/ 2>/dev/null || true
-          rm -rf /tmp/ma_data_bak
+          mkdir -p public/uploads
+          cp -r /tmp/ma_uploads_bak/. public/uploads/ 2>/dev/null || true
+          rm -rf /tmp/ma_data_bak /tmp/ma_uploads_bak
 
           # Intégration continue
           npm install
