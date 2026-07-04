@@ -37,6 +37,6 @@ jobs:
           npm run build
 
           # Déploiement
-          pm2 reload group-marie-albert --update-env \
+          pm2 restart group-marie-albert --update-env \
             || pm2 start ecosystem.config.js
           pm2 save
