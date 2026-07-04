@@ -7,69 +7,35 @@ on:
     branches: [main]
 
 jobs:
-  # ── Intégration continue ────────────────────────────────────────────────────
-  ci:
-    name: Lint & Build
-    runs-on: ubuntu-latest
+  ci-cd:
+    name: Lint, Build & Deploy
+    runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout, CI & Deploy
+        run: |
+          set -e
+          cd ${{ secrets.DEPLOY_PATH }}
 
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+          # Sauvegarder les données JSON de l'admin
+          mkdir -p /tmp/ma_data_bak
+          cp data/*.json /tmp/ma_data_bak/ 2>/dev/null || true
 
-      - name: Installer les dépendances
-        run: npm ci
+          # Récupérer la dernière version
+          git fetch origin main
+          git reset --hard origin/main
 
-      - name: Vérification TypeScript
-        run: npx tsc --noEmit
+          # Restaurer les données JSON
+          cp /tmp/ma_data_bak/*.json data/ 2>/dev/null || true
+          rm -rf /tmp/ma_data_bak
 
-      - name: Lint
-        run: npm run lint
+          # Intégration continue
+          npm ci
+          npx tsc --noEmit
+          npm run lint
+          npm run build
 
-      - name: Build Next.js
-        run: npm run build
-
-  # ── Déploiement continu ─────────────────────────────────────────────────────
-  deploy:
-    name: Déployer sur VPS
-    needs: ci
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    environment: production
-
-    steps:
-      - name: Déployer via SSH
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || '22' }}
-          script: |
-            set -e
-            cd ${{ secrets.DEPLOY_PATH }}
-
-            # Sauvegarder les données JSON modifiées par l'admin
-            mkdir -p /tmp/ma_data_bak
-            cp data/*.json /tmp/ma_data_bak/ 2>/dev/null || true
-
-            # Récupérer la dernière version du code
-            git fetch origin main
-            git reset --hard origin/main
-
-            # Restaurer les données JSON
-            cp /tmp/ma_data_bak/*.json data/ 2>/dev/null || true
-            rm -rf /tmp/ma_data_bak
-
-            # Installer & construire
-            npm ci
-            npm run build
-
-            # Reload gracieux (zéro downtime) ou démarrage initial
-            pm2 reload group-marie-albert --update-env \
-              || pm2 start ecosystem.config.js
-            pm2 save
+          # Déploiement
+          pm2 reload group-marie-albert --update-env \
+            || pm2 start ecosystem.config.js
+          pm2 save
