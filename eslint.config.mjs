@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Runner GitHub Actions — pas notre code
+    "actions-runner/**",
   ]),
 ]);
 
