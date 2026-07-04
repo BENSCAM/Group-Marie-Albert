@@ -31,7 +31,7 @@ jobs:
           rm -rf /tmp/ma_data_bak
 
           # Intégration continue
-          npm ci
+          npm install
           npx tsc --noEmit
           npm run lint
           npm run build
