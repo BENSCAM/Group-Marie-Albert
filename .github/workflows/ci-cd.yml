@@ -15,6 +15,7 @@ jobs:
       - name: Checkout, CI & Deploy
         run: |
           set -e
+          git config --global --add safe.directory ${{ secrets.DEPLOY_PATH }}
           cd ${{ secrets.DEPLOY_PATH }}
 
           # Sauvegarder les données JSON de l'admin
