@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import EtablissementCard from '@/components/EtablissementCard';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   const config = getSiteConfig();
   const etablissements = getEtablissements().filter((e) => e.actif);
