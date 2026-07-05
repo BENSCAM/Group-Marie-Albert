@@ -36,6 +36,7 @@ jobs:
           # Intégration continue
           npm install
           npm run lint
+          rm -rf .next
           npm run build
 
           # Déploiement
